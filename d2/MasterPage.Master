@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="d2.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        
+        .auto-style1 {
+            width: 1429px;
+            height: 216px;
+        }
+        .auto-style2 {
+            width: 264px;
+        }
+
+        .main_menu
+    {
+        width: 110px;
+        background-color: #ff6a00;
+        color: #000;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        margin-right: 5px;
+        margin-top: 5px;
+    }
+    .level_menu
+    {
+        width: 110px;
+        background-color: #ffd800;
+        color: #000;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        margin-top: 5px;
+    }
+    a:hover.main_menu { color: #0ff; font-weight: bolder; }
+    a:hover.level_menu { color: #0ff; font-weight: bolder; }
+        
+        .auto-style3 {
+            width: 264px;
+            height: 87px;
+        }
+        .auto-style4 {
+            height: 87px;
+        }
+        
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table class="auto-style1">
+                    <tr>
+                        <td class="auto-style3">TOP CORNER</td>
+                        <td class="auto-style4">
+                            <%--<asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1"></asp:TreeView>
+                            --%>
+                            <%--<asp:SiteMapPath ID="SiteMapPath1" runat="server">
+                            </asp:SiteMapPath>--%>
+                            
+<asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal">
+   <LevelMenuItemStyles>
+      <asp:MenuItemStyle CssClass="main_menu" />
+      <asp:MenuItemStyle CssClass="level_menu" />
+   </LevelMenuItemStyles>
+</asp:Menu>
+<asp:SiteMapDataSource ID="SiteMapDataSource1" ShowStartingNode="false" runat="server" /></td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">COL</td>
+                        <td><asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            
+                            </asp:ContentPlaceHolder>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+    </form>
+</body>
+</html>
